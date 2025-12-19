@@ -75,3 +75,36 @@ function displayError(error) {
   errorMessage.textContent = error.message;
   errorMessage.style.display = 'block';
 }
+
+// Main handler function
+async function handleGetAlerts() {
+  const state = stateInput.value.trim().toUpperCase();
+  
+  // Validate input
+  if (!state) {
+    displayError(new Error('Please enter a state abbreviation'));
+    return;
+  }
+  
+  if (state.length !== 2) {
+    displayError(new Error('Please enter a valid 2-letter state abbreviation'));
+    return;
+  }
+  
+  try {
+    // Fetch alerts
+    const data = await fetchWeatherAlerts(state);
+    
+    // Display alerts
+    displayAlerts(data);
+    
+    // Clear input
+    clearInput();
+  } catch (error) {
+    // Display error
+    displayError(error);
+    
+    // Clear input even on error
+    clearInput();
+  }
+}
