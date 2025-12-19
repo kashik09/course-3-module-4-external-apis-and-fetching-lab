@@ -61,6 +61,11 @@ function displayAlerts(data) {
   }
 }
 
+// Step 3: Clear input after submission
+function clearInput() {
+  stateInput.value = '';
+}
+
 // Step 4: Display error messages
 function displayError(error) {
   // Clear alerts container
