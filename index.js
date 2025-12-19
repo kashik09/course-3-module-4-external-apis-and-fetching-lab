@@ -109,12 +109,16 @@ async function handleGetAlerts() {
   }
 }
 
-// Event listener for button click
-getAlertsBtn.addEventListener('click', handleGetAlerts);
+/// Event listener for button click
+if (getAlertsBtn) {
+  getAlertsBtn.addEventListener('click', handleGetAlerts);
+}
 
 // Optional: Allow Enter key to submit
-stateInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    handleGetAlerts();
-  }
-});
+if (stateInput) {
+  stateInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      handleGetAlerts();
+    }
+  });
+}
