@@ -32,7 +32,7 @@ function displayAlerts(data) {
   
   // Hide error message on successful fetch
   errorMessage.textContent = '';
-  errorMessage.style.display = 'none';
+  errorMessage.classList.add('hidden');
   
   // Get the title and number of alerts
   const title = data.title;
@@ -73,7 +73,7 @@ function displayError(error) {
   
   // Show error message
   errorMessage.textContent = error.message;
-  errorMessage.style.display = 'block';
+  errorMessage.classList.remove('hidden');
 }
 
 // Main handler function
