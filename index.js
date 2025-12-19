@@ -3,8 +3,8 @@ const weatherApi = "https://api.weather.gov/alerts/active?area="
 
 // Get DOM elements
 const stateInput = document.getElementById('state-input');
-const getAlertsBtn = document.getElementById('get-alerts-btn');
-const alertsContainer = document.getElementById('alerts-container');
+const getAlertsBtn = document.getElementById('fetch-alerts');
+const alertsContainer = document.getElementById('alerts-display');
 const errorMessage = document.getElementById('error-message');
 
 // Step 1: Fetch weather alerts from the API
