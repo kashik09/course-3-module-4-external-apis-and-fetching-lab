@@ -60,3 +60,13 @@ function displayAlerts(data) {
     alertsContainer.appendChild(noAlerts);
   }
 }
+
+// Step 4: Display error messages
+function displayError(error) {
+  // Clear alerts container
+  alertsContainer.innerHTML = '';
+  
+  // Show error message
+  errorMessage.textContent = error.message;
+  errorMessage.style.display = 'block';
+}
